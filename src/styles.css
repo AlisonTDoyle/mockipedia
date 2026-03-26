@@ -1,3 +1,58 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+@plugin "daisyui";
+@plugin "daisyui/theme" {
+  name: "mytheme";
+  default: true;
+  prefersdark: false;
+  color-scheme: light;
 
-@import 'tailwindcss';
+  /* Base — from --background: #f6fdfa */
+  --color-base-100: oklch(99% 0.01 160);
+  --color-base-200: oklch(96% 0.015 160);
+  --color-base-300: oklch(92% 0.02 160);
+  /* Text — from --text: #051912 */
+  --color-base-content: oklch(14% 0.03 160);
+
+  /* Primary — from --primary: #36d69b */
+  --color-primary: oklch(76% 0.17 162);
+  --color-primary-content: oklch(14% 0.03 162);
+
+  /* Secondary — from --secondary: #a98de8 */
+  --color-secondary: oklch(68% 0.17 288);
+  --color-secondary-content: oklch(98% 0.01 288);
+
+  /* Accent — from --accent: #c95bdd */
+  --color-accent: oklch(62% 0.22 310);
+  --color-accent-content: oklch(98% 0.01 310);
+
+  /* Neutral — derived from text color */
+  --color-neutral: oklch(30% 0.03 160);
+  --color-neutral-content: oklch(98% 0.01 160);
+
+  /* Semantic — adjusted to harmonize with the palette */
+  --color-info: oklch(70% 0.15 230);
+  --color-info-content: oklch(98% 0.01 230);
+  --color-success: oklch(76% 0.17 162);
+  --color-success-content: oklch(14% 0.03 162);
+  --color-warning: oklch(80% 0.18 80);
+  --color-warning-content: oklch(20% 0.05 80);
+  --color-error: oklch(62% 0.22 20);
+  --color-error-content: oklch(98% 0.01 20);
+
+  /* border radius */
+  --radius-selector: 1rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0.5rem;
+
+  /* base sizes */
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+
+  /* border size */
+  --border: 1px;
+
+  /* effects */
+  --depth: 1;
+  --noise: 0;
+}
+@import "bootstrap-icons/font/bootstrap-icons";
