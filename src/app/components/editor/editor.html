@@ -1,1 +1,26 @@
-<p>editor works!</p>
+<div class="mx-32 my-8 ">
+    <h1 class="text-primary text-5xl">Article Editor</h1>
+    <hr class="text-primary mt-2 mb-8">
+    <div class="alert alert-error" [hidden]="hideErrorMessage">
+        <i class="bi bi-exclamation-circle"></i>
+        <div>
+            <h3 class="font-bold">
+                Error
+            </h3>
+            <span class="text-xs">
+                {{errorMessage}}
+            </span>
+        </div>
+    </div>
+    <form class="mb-8">
+        <fieldset class="my-2">
+            <legend class="fieldset-legend">Title</legend>
+            <input type="text" class="input w-full sm:w-120" [formControl]="titleFormControl">
+        </fieldset>
+        <fieldset class="my-2">
+            <legend class="fieldset-legend">Content</legend>
+            <textarea class="textarea w-full h-60" [formControl]="contentFormControl"></textarea>
+        </fieldset>
+        <button class="btn btn-secondary my-2" (click)="onSubmit()">Submit </button>
+    </form>
+</div>
