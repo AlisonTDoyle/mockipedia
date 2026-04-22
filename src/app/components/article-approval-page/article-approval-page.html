@@ -1,0 +1,30 @@
+<div class="mx-32 my-8 ">
+    <h1 class="text-primary text-5xl">Articles Pending Review</h1>
+    <hr class="text-primary mt-2 mb-8">
+    <div class="overflow-x-auto rounded-box border border-base-content/5 bg-base-100">
+        <table class="table">
+            <!-- head -->
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Article Name</th>
+                    <th>Creation</th>
+                    <th>Judgement</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let article of articlesPendingApproval">
+                    <td>{{article.article_id}}</td>
+                    <td>{{article.article_name}}</td>
+                    <td>{{article.creation | date:'short'}}</td>
+                    <td>
+                        <button class="btn btn-success w-20 mx-2">Approve</button>
+                        <button class="btn btn-error w-20 mx-2">Deny</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <button class="btn btn-secondary my-2" [disabled]="disablePreviousPageButton" (click)="previousPage()">Prev. Page</button>
+    <button class="btn btn-secondary m-2" [disabled]="disableNextPageButton" (click)="nextPage()">Next Page</button>
+</div>

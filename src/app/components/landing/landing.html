@@ -11,7 +11,8 @@
                         information about whatever niche topic you are interested in!
                     </p>
                     <p class="my-2"><b>Have something to share?</b></p>
-                    <button routerLink="/editor" class="btn btn-secondary"><i class="bi bi-pen"></i> Write Your Own Article</button>
+                    <button routerLink="/editor" class="btn btn-secondary"><i class="bi bi-pen"></i> Write Your Own
+                        Article</button>
                 </div>
             </div>
         </div>
@@ -20,10 +21,10 @@
         <div class="col-span-4 my-16 mx-8">
             <h2 class="text-3xl font-bold text-accent text-center">Most Viewed Articles</h2>
             <div class="flex justify-center my-8">
-                <div class="card w-96 bg-base-100 shadow-sm mx-4">
+                <div class="card w-96 bg-base-100 shadow-sm mx-4" *ngFor="let article of mostViewedArticles">
                     <div class="card-body">
                         <span class="badge badge-xs badge-warning">Most Viewed Article</span>
-                        <h2 class="text-3xl font-bold">Harry Potter and the Philosopher's Stone</h2>
+                        <h2 class="text-3xl font-bold">{{article.article_name}}</h2>
                         <p class="text-neutral-500/80">Last Edited: 12 Mar 2026</p>
 
                         <div class="stat">
@@ -31,7 +32,7 @@
                                 Article Views
                             </div>
                             <div class="stat-value text-accent">
-                                200
+                                {{article.views}}
                             </div>
                             <div class="stat-figure text-accent text-6xl">
                                 <i class="bi bi-eye"></i>
@@ -39,42 +40,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card w-96 bg-base-100 shadow-sm mx-4">
-                    <div class="card-body">
-                        <h2 class="text-3xl font-bold">Harry Potter and the Philosopher's Stone</h2>
-                        <p class="text-neutral-500/80">Last Edited: 12 Mar 2026</p>
 
-                        <div class="stat">
-                            <div class="stat-title">
-                                Article Views
-                            </div>
-                            <div class="stat-value text-accent">
-                                200
-                            </div>
-                            <div class="stat-figure text-accent text-6xl">
-                                <i class="bi bi-eye"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card w-96 bg-base-100 shadow-sm mx-4">
-                    <div class="card-body">
-                        <h2 class="text-3xl font-bold">Harry Potter and the Philosopher's Stone</h2>
-                        <p class="text-neutral-500/80">Last Edited: 12 Mar 2026</p>
-
-                        <div class="stat">
-                            <div class="stat-title">
-                                Article Views
-                            </div>
-                            <div class="stat-value text-accent">
-                                200
-                            </div>
-                            <div class="stat-figure text-accent text-6xl">
-                                <i class="bi bi-eye"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
 

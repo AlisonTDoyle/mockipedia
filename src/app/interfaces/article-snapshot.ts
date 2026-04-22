@@ -1,7 +1,5 @@
 export interface ArticleSnapshot {
-    id: string
-    title: string
-    creation: Date
-    lastModified: Date
+    article_id: string
+    article_name: string
     views: number
 }
