@@ -1,43 +1,9 @@
 <div class="mx-32 my-8 grid grid-cols-6 gap-8">
     <!-- article content -->
     <div class="col-span-5">
-        <h1 class="text-primary text-5xl">Article Title</h1>
+        <h1 class="text-primary text-5xl">{{article?.content?.title}}</h1>
         <hr class="text-primary mt-2 mb-8">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla lobortis placerat tellus. Suspendisse vel
-            nulla rutrum, egestas dui eu, fringilla magna. Praesent condimentum mi at elit dapibus luctus. Praesent
-            justo leo, varius hendrerit lectus eget, eleifend fringilla magna. Pellentesque volutpat augue tempus,
-            feugiat ligula ut, varius eros. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse
-            elementum convallis est nec molestie. Nam augue massa, placerat et luctus vel, maximus sed enim. Nunc
-            dapibus porta fringilla. Morbi quis purus vel libero consectetur pharetra eleifend at mauris. Nulla vehicula
-            leo lectus, nec pellentesque enim ultrices id.<br><br>
-
-            Fusce porttitor odio porta, posuere tortor at, dignissim risus. Fusce eget auctor dui. Sed in enim
-            malesuada, tempus lorem non, efficitur orci. Donec eu hendrerit sapien. Ut convallis purus ac pellentesque
-            lobortis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dolor metus, pretium in viverra id,
-            hendrerit maximus lacus.<br><br>
-
-            Curabitur vehicula at mi luctus tincidunt. Integer convallis, lacus et pulvinar pellentesque, nisl orci
-            fermentum ex, id tincidunt massa dui vel lorem. Integer at tincidunt lectus, et pulvinar lectus. Praesent
-            sed libero ac neque pretium ullamcorper. Proin scelerisque cursus dolor ut facilisis. Aenean eu velit
-            aliquet, rhoncus massa ullamcorper, placerat leo. Etiam urna elit, gravida et leo sit amet, consectetur
-            rutrum lorem. Pellentesque pharetra consequat elit, a efficitur lacus efficitur a. Aenean hendrerit urna
-            vitae tortor gravida tincidunt. Nulla facilisi. Morbi fringilla, libero sed ornare molestie, arcu tortor
-            semper nisl, vitae scelerisque nulla turpis nec leo. Praesent mattis arcu at ornare iaculis. Aenean vitae
-            tortor in felis faucibus molestie sed a massa. Cras malesuada neque nibh, et congue tortor pretium
-            a.<br><br>
-
-            Etiam ex neque, malesuada et elit sit amet, tincidunt tempor dui. Nunc a lectus mi. Morbi sed erat nec ipsum
-            viverra scelerisque quis a urna. Praesent sollicitudin neque tincidunt congue ultrices. In ipsum purus,
-            auctor eu orci non, porttitor condimentum augue. Proin tempus erat sed pharetra sagittis. Nunc varius
-            pretium condimentum. Donec vel blandit erat. Mauris tristique sit amet justo eget sagittis. Praesent vel
-            urna nisl. Fusce sollicitudin viverra molestie. Aliquam quis magna fermentum, ullamcorper justo ut,
-            vestibulum arcu.<br><br>
-
-            Aenean quis dui nulla. In sollicitudin imperdiet lacus, eget sagittis lectus elementum ac. Phasellus
-            hendrerit gravida ante ac congue. Suspendisse lobortis mauris purus, quis dignissim nibh elementum id. Proin
-            placerat cursus enim a dignissim. Nulla et urna quis nisl sodales finibus. Fusce at condimentum nibh, at
-            tincidunt tortor. Proin dictum fringilla placerat. Nunc fermentum felis urna, nec suscipit orci pulvinar
-            non. Aenean viverra turpis ligula, nec varius ex luctus at.</p>
+        <p>{{article?.content?.content}}</p>
     </div>
 
     <!-- side content -->
@@ -48,17 +14,17 @@
             <div class="stats stats-vertical shadow my-8">
                 <div class="stat">
                     <div class="stat-title">Views</div>
-                    <div class="stat-value">31K</div>
+                    <div class="stat-value">{{article?.details?.views}}</div>
                 </div>
 
                 <div class="stat">
                     <div class="stat-title">Last Edited</div>
-                    <div class="stat-value">12 Mar 2026</div>
+                    <div class="stat-value">{{article?.details?.last_edited | date:'dd MMM yyyy'}}</div>
                 </div>
 
                 <div class="stat">
                     <div class="stat-title">Creation</div>
-                    <div class="stat-value">12 Mar 2026</div>
+                    <div class="stat-value">{{article?.details?.creation | date:'dd MMM yyyy' }}</div>
                 </div>
             </div>
             

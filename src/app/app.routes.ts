@@ -10,7 +10,7 @@ export const routes: Routes = [
         component: Landing
     },
     {
-        path: 'article',
+        path: 'article/:articleId',
         component: Article
     },
     {

@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { ArticleHandler } from '../../services/article-handler/article-handler';
 import { ArticleSnapshot } from '../../interfaces/article-snapshot';
 import { CommonModule } from '@angular/common';
@@ -16,7 +16,7 @@ import { CommonModule } from '@angular/common';
 export class Landing implements OnInit {
   mostViewedArticles:ArticleSnapshot[] = [];
 
-  constructor(private _articleHandler:ArticleHandler, private _cdr: ChangeDetectorRef) {
+  constructor(private _articleHandler:ArticleHandler, private _cdr: ChangeDetectorRef, private _router:Router) {
     
   }
 
@@ -25,5 +25,9 @@ export class Landing implements OnInit {
       this.mostViewedArticles = data;
       this._cdr.detectChanges();
     });
+  }
+
+  navigateToArticle(articleId:string) {
+    this._router.navigate(['/article', articleId]);
   }
 }

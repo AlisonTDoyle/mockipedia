@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment.development';
 import { HttpClient } from '@angular/common/http';
-import { catchError, tap, map } from 'rxjs';
+import { catchError, tap, map, Observable } from 'rxjs';
 import { ArticleSnapshot } from '../../interfaces/article-snapshot';
+import { Article } from '../../interfaces/article';
 
 
 @Injectable({
@@ -26,8 +27,8 @@ export class ArticleHandler {
       }))
   }
 
-  public ReadArticle(articleId: number) {
-
+  public ReadArticle(articleId: number) : Observable<Article> {
+    return this._httpClient.get<Article>(this._apiUrl + `/article/${articleId}`);
   }
 
   public ReadMostViewedArticles() {

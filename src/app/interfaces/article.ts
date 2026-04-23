@@ -1,5 +1,18 @@
-import { ArticleSnapshot } from "./article-snapshot"
+export interface Article {
+  details: ArticleDetails;
+  content: ArticleContent;
+}
 
-export interface Article extends ArticleSnapshot {
-    content: string
+export interface ArticleDetails {
+  article_id: string;
+  article_name: string;
+  creation: string;
+  last_edited: string;
+  temp_location: string;
+  views: number;
+}
+
+export interface ArticleContent {
+  title: string;
+  content: string;
 }

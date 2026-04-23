@@ -22,7 +22,7 @@
             <h2 class="text-3xl font-bold text-accent text-center">Most Viewed Articles</h2>
             <div class="flex justify-center my-8">
                 <div class="card w-96 bg-base-100 shadow-sm mx-4" *ngFor="let article of mostViewedArticles">
-                    <div class="card-body">
+                    <div class="card-body hover:cursor-pointer" (click)="navigateToArticle(article.article_id)">
                         <span class="badge badge-xs badge-warning">Most Viewed Article</span>
                         <h2 class="text-3xl font-bold">{{article.article_name}}</h2>
                         <p class="text-neutral-500/80">Last Edited: 12 Mar 2026</p>
