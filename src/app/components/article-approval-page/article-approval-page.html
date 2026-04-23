@@ -18,8 +18,8 @@
                     <td>{{article.article_name}}</td>
                     <td>{{article.creation | date:'short'}}</td>
                     <td>
-                        <button class="btn btn-success w-20 mx-2">Approve</button>
-                        <button class="btn btn-error w-20 mx-2">Deny</button>
+                        <button class="btn btn-success w-20 mx-2" (click)="approveArticle(article.article_id)">Approve</button>
+                        <button class="btn btn-error w-20 mx-2" (click)="approveArticle(article.article_id)">Deny</button>
                     </td>
                 </tr>
             </tbody>

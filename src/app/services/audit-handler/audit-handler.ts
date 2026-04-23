@@ -8,16 +8,18 @@ import { PendingArticleResponse } from '../../interfaces/prending-article-respon
 })
 export class AuditHandler {
   private _apiUrl: string = environment.API_URL;
-  
+
   constructor(private _httpClient: HttpClient) {
 
   }
 
-  public ReadArticlesAwaitingApproval(page:number) {
+  public ReadArticlesAwaitingApproval(page: number) {
     return this._httpClient.get<PendingArticleResponse>(this._apiUrl + `/article/pending-audit?page=${page}`)
   }
 
-  public UpdateArticleApprovalStatus(articleId: number, isApproved: boolean) {
-    
+  public UpdateArticleApprovalStatus(articleId: number, isApproved: number) {
+    // 1 = denied
+    // 2 = approved
+    return this._httpClient.post(this._apiUrl + `/article/${articleId}/decision/${isApproved}`, {})
   }
 }

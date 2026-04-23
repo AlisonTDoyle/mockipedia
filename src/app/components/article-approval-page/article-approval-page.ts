@@ -41,11 +41,28 @@ export class ArticleApprovalPage implements OnInit {
   }
 
   getPage(pageNumber: number) {
+    console.log(this.page)
     this._auditHandler.ReadArticlesAwaitingApproval(pageNumber).subscribe((res: PendingArticleResponse) => {
       this.articlesPendingApproval = res.articles;
       this.disableNextPageButton = res.page >= res.total_pages;
       this.disablePreviousPageButton = res.page <= 1;
       this._cdr.detectChanges();
     });
+  }
+
+  approveArticle(articleNumber: string) {
+    let id: number = Number(articleNumber);
+    this._auditHandler.UpdateArticleApprovalStatus(id, 2).subscribe(() => {
+      // refresh current page
+      this.getPage(this.page)
+    })
+  }
+
+  denyArticle(articleNumber: string) {
+    let id: number = Number(articleNumber);
+    this._auditHandler.UpdateArticleApprovalStatus(id, 1).subscribe(() => {
+      // refresh current page
+      this.getPage(this.page)
+    })
   }
 }
